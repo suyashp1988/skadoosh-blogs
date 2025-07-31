@@ -5,9 +5,8 @@ import Layout from '../layouts/BlogPost.astro';
 <Layout
 	title="About Me"
 	description="Learn more about Suyash Pandey, the independent consultant behind Skadoosh."
-<<<<<<< HEAD
 	pubDate={new Date()}
-	heroImage="/blog-placeholder-about.jpg"
+	heroImage=""
 >
 	<style>
 		.about-section {
@@ -44,11 +43,13 @@ import Layout from '../layouts/BlogPost.astro';
 	</style>
 
 	<div class="about-section">
+    <!-- 
 		<img
 			src="https://placehold.co/150x150/E2E8F0/4A5568?text=Your+Photo"
 			alt="A picture of Suyash Pandey"
 			class="profile-pic"
 		/>
+        -->
 		<div class="about-text">
 			<h2>Who Am I?</h2>
 			<p>
@@ -81,170 +82,4 @@ import Layout from '../layouts/BlogPost.astro';
 		Let’s collaborate to streamline your processes and elevate your business to the next level!
 	</p>
 
-=======
-	pubDate={new Date('2025-07-31')}
-	heroImage="/blog-placeholder-about.jpg"
->
-    <!-- Styles for the modern design -->
-    <style>
-        :root {
-            --primary-color: #3B82F6; /* A nice, modern blue */
-            --text-color: #374151; /* Dark gray for readability */
-            --heading-color: #1F2937; /* Even darker for headings */
-            --background-color: #F9FAFB; /* Very light gray background */
-            --card-background: #FFFFFF;
-            --success-color: #10B981; /* Green for checkmarks */
-            --border-color: #E5E7EB;
-        }
-
-        /* The main container for the content, styled as a card */
-        .about-me-container {
-            max-width: 800px;
-            width: 100%;
-            margin: 2rem auto; /* Added margin for spacing within the layout */
-            background-color: var(--card-background);
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
-            border: 1px solid var(--border-color);
-            box-sizing: border-box;
-        }
-
-		.about-section {
-			display: flex;
-			align-items: center;
-			gap: 2.5rem;
-			margin-bottom: 3rem;
-			flex-wrap: wrap;
-		}
-
-		.profile-pic {
-			width: 160px;
-			height: 160px;
-			border-radius: 50%;
-			object-fit: cover;
-			flex-shrink: 0;
-			margin: 0 auto;
-            border: 6px solid var(--card-background);
-            box-shadow: 0 0 0 3px var(--primary-color), 0 5px 15px rgba(0,0,0,0.1);
-		}
-
-		.about-text {
-			flex: 1;
-			min-width: 300px;
-		}
-
-		h2 {
-            font-family: 'Poppins', sans-serif; /* Ensuring headings use the Poppins font */
-            font-size: 1.8rem;
-			font-weight: 700;
-            color: var(--heading-color);
-			margin-top: 0;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-		}
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            padding-left: 2rem;
-            position: relative;
-            margin-bottom: 0.75rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
-        ul li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: var(--success-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-		/* Responsive adjustments */
-        @media (max-width: 768px) {
-            .about-me-container {
-                padding: 2rem;
-                margin: 1rem auto;
-            }
-            .about-section {
-                flex-direction: column;
-                align-items: center;
-				text-align: center;
-                gap: 2rem;
-            }
-            h2 {
-                text-align: center;
-            }
-            h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-	</style>
-    <!-- Google Font Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-
-    <!-- Page Content -->
-    <div class="about-me-container">
-        <div class="about-section">
-            <img
-                src="https://placehold.co/160x160/E2E8F0/4A5568?text=Your+Photo"
-                alt="A picture of Suyash Pandey"
-                class="profile-pic"
-            />
-            <div class="about-text">
-                <h2>Who Am I?</h2>
-                <p>
-                    👋 Hi! I’m Suyash—an independent consultant living in the Lowlands for almost 10 years now. 🌍 Originally from India 🇮🇳, I’ve found my second home here in the Netherlands 🇳🇱, and I’m loving it!
-                </p>
-                <p>
-                    🎬 Big fan of Kung Fu Panda here! 🐼 I couldn’t resist adopting the word "Ska-doosh" 💥—especially when Po flexes his pinkie to defeat Tai Lung. That moment? Legendary. 😎
-                </p>
-                <p>
-                    If you’d like to know more about me, how about we chat over a ☕ coffee, either in person or virtually via Teams? 💻
-                </p>
-            </div>
-        </div>
-
-        <h2>Ska Doosh and Me?</h2>
-        <p>
-            With over a decade of experience in consultancy, I decided it was time to take the leap and start my own journey. Now, I’m here to help you achieve your goals and turn your vision into reality. Let’s make great things happen together!
-        </p>
-
-        <h2>What do I offer?</h2>
-        <p>
-            As a Solution Architect, my expertise lies in transforming business needs into powerful solutions. I specialize in:
-        </p>
-        <ul>
-            <li>Dynamics Digital Contact Center</li>
-            <li>Dynamics Field Service</li>
-            <li>Power Platform</li>
-        </ul>
-        <p>
-            Let’s collaborate to streamline your processes and elevate your business to the next level!
-        </p>
-    </div>
->>>>>>> 234876cc25e2d823689494caf24489c3f79bdca4
 </Layout>
