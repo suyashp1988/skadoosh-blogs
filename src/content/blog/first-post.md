@@ -1,16 +1,48 @@
 ---
-title: "First post"
+title: "Unlocking Seamless Call Journeys: A Guide for Voice Consultants"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
 heroImage: "/blog-placeholder-3.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+In today’s fast-paced telecommunications landscape, understanding the technology behind seamless customer support systems is key to delivering great experiences. Let me take you through an example of how it all works using modern telephony and cloud-based solutions.
+Imagine a company, Skadoosh, with a dedicated Customer Service Number: +31xxxxxx, where customers turn for assistance. Behind this simple number is an intricate web of technology that ensures calls are routed smoothly, efficiently, and securely, all powered by a reliable PSTN provider.
+When a customer calls, the company’s Session Border Controller (SBC) springs into action. As a vigilant gatekeeper, the SBC ensures that all calls are securely managed and efficiently handled. Once the SBC processes the incoming call, it sends it through a SIP trunk, establishing a secure, high-quality connection to Azure Communication Services (ACS).
+This handoff to ACS is critical. ACS provides a seamless pathway to route the call, utilizing Direct Routing to connect to the company’s Dynamics Contact Center. Here, agents are on standby, ready to deliver personalized support to the customer. This entire process—from the customer dialing in to being connected with an agent—is carefully orchestrated to ensure zero friction and maximum reliability.
+For consultants and architects, understanding this journey is essential for implementing similar systems. Every component plays a vital role in delivering a seamless customer experience.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+The Key Technologies You Should Know:
+1. Azure Communication Services (ACS)
+ACS is a cloud-based platform that allows developers to add voice, video, chat, and SMS capabilities to applications, like Dynamics 365. If you're building a support system, you can easily integrate ACS to enhance communication between customers and agents. For organizations, you can either buy a Microsoft number or, for more flexibility, port an entire range of numbers dedicated to the business.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+*Figure: Example reference architecture showing how Azure Communication Services (ACS) integrates with PSTN, SBC, and Dynamics Contact Center. Source: Microsoft Docs*
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+
+2. Direct Routing
+Direct Routing enables organizations to connect digital contact centers (such as Microsoft Teams or Dynamics Voice) to the PSTN through an SBC. This allows businesses to retain control over their phone numbers by bringing their own telephony provider. Consultants and architects should understand how to link the SBC to ACS via Fully Qualified Domain Name (FQDN) to ensure secure, reliable voice connectivity.
+
+Edit Image
+
+3. PSTN (Public Switched Telephone Network)
+PSTN is the traditional global telephone network that connects businesses to customers. It remains an integral part of communication, ensuring that customers using landlines or mobile phones can seamlessly connect with digital contact centers.
+
+Edit Image
+4. SIP (Session Initiation Protocol)
+SIP is the protocol that initiates and manages real-time communication sessions, such as voice calls. It plays a crucial role in maintaining call quality and stability, especially in contact centers handling voice traffic.
+
+5. SBC (Session Border Controller)
+The SBC is a vital component that manages the connection between an internal contact center network and external telephony providers. It ensures the security, control, and seamless flow of communication, making it a crucial piece in any modern telephony setup.Below is an example of a pjhyical SBC. There are also Virtual SBC though.
+
+Edit Image
+Edit Image
+6. VoIP (Voice over Internet Protocol)
+VoIP is a technology that enables voice calls over the internet instead of traditional phone lines. VoIP offers flexibility and scalability for digital contact centers, especially those utilizing cloud networks like ACS and Dynamics 365.
+
+Why It Matters for Consultants and Architects:
+As a consultant or architect implementing telephony solutions, understanding these technologies is essential. Whether you’re integrating ACS for cloud-based communication, setting up Direct Routing to leverage existing phone numbers, or deploying an SBC to secure call traffic, knowing how each component fits together allows you to build efficient and scalable solutions for your clients.
+This knowledge empowers you to design communication systems that not only work seamlessly but also enhance the customer experience, ensuring that every call flows smoothly from start to finish.
+
+Handy URLs:
+ Bring your own carrier | Microsoft Learn 
+ Azure direct routing infrastructure requirements—Azure Communication Services | Microsoft Learn 
