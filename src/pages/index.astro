@@ -192,6 +192,114 @@ import {
 				line-height: 1.6;
 			}
 
+			/* Careers Highlight Section */
+			.careers-highlight {
+				background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+				color: white;
+				padding: 4rem 1.5rem;
+			}
+
+			.careers-content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+				align-items: center;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.careers-text .section-title {
+				color: white;
+				margin-bottom: 1rem;
+			}
+
+			.careers-text .section-subtitle {
+				color: #e2e8f0;
+				font-size: 1.2rem;
+				margin-bottom: 2rem;
+			}
+
+			.careers-benefits {
+				list-style: none;
+				padding: 0;
+				margin-bottom: 2rem;
+			}
+
+			.careers-benefits li {
+				padding: 0.5rem 0;
+				font-size: 1.1rem;
+				color: #e2e8f0;
+			}
+
+			.careers-actions {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+
+			.btn-primary, .btn-secondary {
+				padding: 0.75rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s ease;
+				display: inline-block;
+			}
+
+			.btn-primary {
+				background: #667eea;
+				color: white;
+			}
+
+			.btn-primary:hover {
+				background: #5a67d8;
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+			}
+
+			.btn-secondary {
+				background: transparent;
+				color: white;
+				border: 2px solid #667eea;
+			}
+
+			.btn-secondary:hover {
+				background: #667eea;
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+			}
+
+			.opportunity-card {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 12px;
+				padding: 2rem;
+				text-align: center;
+			}
+
+			.opportunity-card h3 {
+				color: white;
+				font-size: 1.3rem;
+				margin-bottom: 1.5rem;
+				font-weight: 600;
+			}
+
+			.job-highlights {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75rem;
+			}
+
+			.highlight {
+				background: rgba(102, 126, 234, 0.3);
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				color: white;
+				font-size: 0.9rem;
+				font-weight: 500;
+			}
+
 			/* Industries Section */
 			.industries {
 				background: white;
@@ -237,6 +345,19 @@ import {
 				.cta-buttons {
 					flex-direction: column;
 					align-items: center;
+				}
+
+				.careers-content {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+
+				.careers-actions {
+					flex-direction: column;
+				}
+
+				.btn-primary, .btn-secondary {
+					text-align: center;
 				}
 				
 				.services-grid {
@@ -285,6 +406,40 @@ import {
 					<a href="/services" class="cta-primary">
 						Explore All Services
 					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Career Opportunities -->
+		<section class="careers-highlight">
+			<div class="container">
+				<div class="careers-content">
+					<div class="careers-text">
+						<h2 class="section-title">Join Our Growing Team</h2>
+						<p class="section-subtitle">
+							🚀 We're hiring! Join our ambitious Dutch-Indian tech consultancy as a certified Microsoft consultant.
+						</p>
+						<ul class="careers-benefits">
+							<li>💰 Competitive compensation package</li>
+							<li>✈️ Annual travel to Netherlands headquarters</li>
+							<li>🔥 Real projects from Day 1 - No trainee roles</li>
+							<li>🏠 Subsidized accommodation in Gorakhpur</li>
+						</ul>
+						<div class="careers-actions">
+							<a href="/careers" class="btn-primary">View Open Positions</a>
+							<a href="https://www.linkedin.com/jobs/view/4335840121/" class="btn-secondary" target="_blank">Apply Now</a>
+						</div>
+					</div>
+					<div class="careers-visual">
+						<div class="opportunity-card">
+							<h3>Microsoft Dynamics 365 & Power Platform Consultant</h3>
+							<div class="job-highlights">
+								<span class="highlight">📍 Gorakhpur, India</span>
+								<span class="highlight">👔 Full-time</span>
+								<span class="highlight">🎓 PL-900 + PL-200 Required</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -1,0 +1,413 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<BaseHead title="Careers at Skadoosh" description="Join our ambitious Dutch-Indian tech consultancy. Multiple positions available for Microsoft technology experts." />
+</head>
+<body>
+	<Header />
+	<main>
+		<div class="careers-container">
+			<section class="hero-section">
+				<h1>Join the Skadoosh Team</h1>
+				<p class="hero-subtitle">Build the future of technology consulting with us</p>
+			</section>
+
+			<section class="company-intro">
+				<h2>About Skadoosh</h2>
+				<p>Skadoosh is a new, ambitious Dutch-Indian tech consultancy. We are building our new global delivery center in Gorakhpur to act as the strategic partner for our Client, a major European leader in its industry.</p>
+				<p>This is not a typical graduate job. You will be a full-time employee of a Dutch company, working on complex projects and mentored by a 10+ year expert and the Dutch founder.</p>
+			</section>
+
+			<section class="jobs-section">
+				<h2>Open Positions</h2>
+				<div class="jobs-grid">
+					
+					<!-- Job Card 1 -->
+					<div class="job-card">
+						<div class="job-card-header">
+							<h3>Microsoft Dynamics 365 & Power Platform Consultant</h3>
+							<span class="job-status">Open</span>
+						</div>
+						
+						<div class="job-card-meta">
+							<span class="location">📍 Gorakhpur, India (Hybrid)</span>
+							<span class="type">👔 Full-time</span>
+						</div>
+						
+						<p class="job-summary">
+							Join us as a certified consultant working with European clients on Microsoft Dynamics 365 and Power Platform projects. This is not a trainee role - you'll be contributing from Day 1.
+						</p>
+						
+						<div class="job-highlights">
+							<span class="highlight">PL-900/PL-200 Required</span>
+							<span class="highlight">Netherlands Travel</span>
+							<span class="highlight">Real Projects</span>
+						</div>
+						
+						<div class="job-card-actions">
+							<a href="/careers/microsoft-consultant" class="btn-primary">View Details</a>
+							<a href="https://www.linkedin.com/jobs/view/4335840121/" target="_blank" class="btn-secondary">Apply on LinkedIn</a>
+						</div>
+					</div>
+					
+					<!-- Future Lead Position -->
+					<div class="job-card coming-soon">
+						<div class="job-card-header">
+							<h3>Lead Microsoft Dynamics 365 & Power Platform Consultant</h3>
+							<span class="job-status coming-soon">Coming Soon</span>
+						</div>
+						
+						<div class="job-card-meta">
+							<span class="location">📍 Gorakhpur, India</span>
+							<span class="type">👔 Full-time</span>
+						</div>
+						
+						<p class="job-summary">
+							Lead our Microsoft practice and mentor junior consultants. Drive complex implementations and client relationships for our European market.
+						</p>
+						
+						<div class="job-highlights">
+							<span class="highlight">PL-900 Required</span>
+							<span class="highlight">PL-200 Required</span>
+							<span class="highlight">Leadership Role</span>
+						</div>
+						
+						<div class="job-card-actions">
+							<button class="btn-disabled" disabled>Opening Soon</button>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+
+			<section class="why-skadoosh">
+				<h2>Why Choose Skadoosh?</h2>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<div class="benefit-icon">✈️</div>
+						<h4>Netherlands Travel</h4>
+						<p>Annual trips to our Dutch headquarters</p>
+					</div>
+					
+					<div class="benefit-card">
+						<div class="benefit-icon">🚀</div>
+						<h4>Career Growth</h4>
+						<p>Be part of building something from ground up</p>
+					</div>
+					
+					<div class="benefit-card">
+						<div class="benefit-icon">🏠</div>
+						<h4>Relocation Support</h4>
+						<p>Subsidized accommodation in Gorakhpur</p>
+					</div>
+					
+					<div class="benefit-card">
+						<div class="benefit-icon">💡</div>
+						<h4>Certification Support</h4>
+						<p>We fund your professional certifications</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="contact-section">
+				<h2>Questions About Working With Us?</h2>
+				<p>Get in touch with our team to learn more about opportunities at Skadoosh.</p>
+				
+				<div class="contact-options">
+					<a href="https://www.linkedin.com/in/pandeysuyash/" target="_blank" class="contact-btn">
+						💼 Connect with Suyash Pandey
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+.careers-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hero-section {
+	text-align: center;
+	margin-bottom: 3rem;
+	padding: 4rem 2rem;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	border-radius: 12px;
+}
+
+.hero-section h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	font-weight: 700;
+}
+
+.hero-subtitle {
+	font-size: 1.2rem;
+	opacity: 0.9;
+	font-weight: 300;
+}
+
+.company-intro {
+	background: #f8fafc;
+	padding: 2rem;
+	border-radius: 8px;
+	margin-bottom: 3rem;
+	border-left: 4px solid #667eea;
+}
+
+.jobs-section h2, .why-skadoosh h2, .contact-section h2 {
+	color: #1a365d;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	font-weight: 600;
+}
+
+.jobs-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 2rem;
+	margin-bottom: 4rem;
+}
+
+.job-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	transition: transform 0.3s, box-shadow 0.3s;
+	border: 1px solid #e2e8f0;
+}
+
+.job-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.job-card.coming-soon {
+	opacity: 0.7;
+	background: #f9fafb;
+}
+
+.job-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 1rem;
+	gap: 1rem;
+}
+
+.job-card-header h3 {
+	color: #1a365d;
+	font-size: 1.3rem;
+	margin: 0;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.job-status {
+	background: #10b981;
+	color: white;
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.job-status.coming-soon {
+	background: #6b7280;
+}
+
+.job-card-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	color: #4a5568;
+}
+
+.job-summary {
+	color: #374151;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.job-highlights {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.highlight {
+	background: #e0e7ff;
+	color: #3730a3;
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.job-card-actions {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary, .btn-disabled {
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.2s;
+	display: inline-block;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	flex: 1;
+}
+
+.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+	background: #1a365d;
+	color: white;
+	flex: 1;
+}
+
+.btn-secondary:hover {
+	background: #2d3748;
+	transform: translateY(-2px);
+}
+
+.btn-disabled {
+	background: #e2e8f0;
+	color: #9ca3af;
+	cursor: not-allowed;
+	flex: 1;
+}
+
+.why-skadoosh {
+	margin-bottom: 4rem;
+}
+
+.benefits-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+}
+
+.benefit-card {
+	background: white;
+	padding: 2rem;
+	border-radius: 8px;
+	border: 1px solid #e2e8f0;
+	text-align: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.benefit-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+	color: #1a365d;
+	font-size: 1.1rem;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+
+.contact-section {
+	background: #f8fafc;
+	padding: 3rem 2rem;
+	border-radius: 12px;
+	text-align: center;
+	border: 2px dashed #cbd5e0;
+}
+
+.contact-options {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.contact-btn {
+	background: #1a365d;
+	color: white;
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.2s;
+}
+
+.contact-btn:hover {
+	background: #2d3748;
+	transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+	.hero-section h1 {
+		font-size: 2rem;
+	}
+	
+	.jobs-grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.job-card-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.job-card-meta {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	
+	.job-card-actions {
+		flex-direction: column;
+	}
+	
+	.benefits-grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.contact-options {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+</style>
