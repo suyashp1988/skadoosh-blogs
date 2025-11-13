@@ -23,7 +23,7 @@ import {
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				line-height: 1.6;
-				color: #2c3e50;
+				color: #1a365d;
 				margin: 0;
 				padding: 0;
 			}
@@ -31,28 +31,33 @@ import {
 			.container {
 				max-width: 1200px;
 				margin: 0 auto;
-				padding: 0 1.5rem;
+				padding: 2rem 1rem;
 			}
 
 			/* Hero Section */
 			.contact-hero {
-				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				color: white;
-				padding: 4rem 1.5rem 3rem;
+				padding: 4rem 2rem;
 				text-align: center;
+				border-radius: 12px;
+				margin-bottom: 3rem;
+				box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
 			}
 
 			.contact-hero h1 {
-				font-size: 3rem;
+				font-size: 2.5rem;
 				font-weight: 700;
 				margin-bottom: 1rem;
+				color: white;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 
 			.contact-hero p {
-				font-size: 1.3rem;
+				font-size: 1.2rem;
 				max-width: 800px;
 				margin: 0 auto;
-				color: #ecf0f1;
+				color: rgba(255, 255, 255, 0.95);
 			}
 
 			/* Contact Section */
@@ -77,7 +82,7 @@ import {
 
 			.contact-form h2 {
 				font-size: 2rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1.5rem;
 			}
 
@@ -89,7 +94,7 @@ import {
 				display: block;
 				margin-bottom: 0.5rem;
 				font-weight: 600;
-				color: #2c3e50;
+				color: #1a365d;
 			}
 
 			.form-group input,
@@ -163,7 +168,7 @@ import {
 
 			.contact-card h3 {
 				font-size: 1.4rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1rem;
 			}
 
@@ -193,7 +198,7 @@ import {
 				font-size: 2.5rem;
 				font-weight: 700;
 				margin-bottom: 3rem;
-				color: #2c3e50;
+				color: #1a365d;
 			}
 
 			.offices-grid {
@@ -243,7 +248,7 @@ import {
 
 			.office-card h3 {
 				font-size: 1.4rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 0.5rem;
 			}
 
@@ -310,7 +315,7 @@ import {
 
 			.direct-contact h3 {
 				text-align: center;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1.5rem;
 				font-size: 1.2rem;
 			}
@@ -329,7 +334,7 @@ import {
 				background: white;
 				border-radius: 8px;
 				text-decoration: none;
-				color: #2c3e50;
+				color: #1a365d;
 				border: 2px solid #e2e8f0;
 				transition: all 0.3s ease;
 			}
@@ -402,14 +407,15 @@ import {
 	</head>
 	<body>
 		<Header />
-		
-		<!-- Hero Section -->
-		<section class="contact-hero">
+		<main>
 			<div class="container">
-				<h1>Contact {COMPANY_NAME}</h1>
-				<p>Ready to transform your business with Microsoft solutions? Let's start the conversation.</p>
+				<!-- Hero Section -->
+				<section class="contact-hero">
+					<h1>Contact {COMPANY_NAME}</h1>
+					<p>Ready to transform your business with Microsoft solutions? Let's start the conversation.</p>
+				</section>
 			</div>
-		</section>
+		</main>
 
 		<!-- Contact Section -->
 		<section class="contact-section">

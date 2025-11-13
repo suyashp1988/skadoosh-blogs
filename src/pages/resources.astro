@@ -1,0 +1,765 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<BaseHead title="Developer Resources - Skadoosh" description="Essential tools, certifications, and resources for Microsoft Dynamics 365 and Power Platform developers. Stay updated with the latest news and developments." />
+</head>
+<body>
+	<Header />
+	<main>
+		<div class="resources-container">
+			
+			<!-- Hero Section -->
+			<section class="resources-hero">
+				<div class="hero-content">
+					<h1>Developer Resources Hub</h1>
+					<p class="hero-subtitle">
+						Your one-stop destination for Dynamics 365 & Power Platform development tools, certifications, and the latest industry updates
+					</p>
+					<div class="disclaimer-notice">
+						<p><strong>Important:</strong> The tools, resources, and links provided on this page are third-party products and services created by Microsoft, community developers, and other organizations. Skadoosh does not own, develop, or maintain these tools. We provide these references as a helpful resource for the developer community.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Quick Access Tools -->
+			<section class="quick-tools-section">
+				<h2 class="section-title">Essential Developer Tools</h2>
+				<div class="tools-grid">
+					
+					<div class="tool-card featured">
+						<div class="tool-icon">🧰</div>
+						<h3>XRM Toolbox</h3>
+						<p>The ultimate toolkit for Dynamics 365 administrators and developers with 300+ tools and utilities.</p>
+						<div class="tool-links">
+							<a href="https://www.xrmtoolbox.com/" target="_blank" class="tool-link primary">Download</a>
+							<a href="https://github.com/MscrmTools/XrmToolBox" target="_blank" class="tool-link secondary">GitHub</a>
+						</div>
+					</div>
+
+				<div class="tool-card">
+					<div class="tool-icon">🚀</div>
+					<h3>LevelUp for Dynamics 365</h3>
+					<p>Advanced development and administration tools for Dynamics 365. Chrome extension with utilities for solution management, environment comparison, and bulk operations.</p>
+					<div class="tool-links">
+						<a href="https://chromewebstore.google.com/detail/level-up-for-dynamics-365/bjnkkhimoaclnddigpphpgkfgeggokam?hl=en" target="_blank" class="tool-link primary">Get Extension</a>
+					</div>
+				</div>					<div class="tool-card">
+						<div class="tool-icon">🔗</div>
+						<h3>Dataverse REST Builder</h3>
+						<p>Generate REST API queries for Dataverse with an intuitive interface. Available as Chrome extension and XRM Toolbox plugin.</p>
+						<div class="tool-links">
+							<a href="https://chromewebstore.google.com/detail/dataverse-rest-builder/ioajdaokkkgjehbpiogakecdifaeaeho?hl=en" target="_blank" class="tool-link primary">Chrome Extension</a>
+							<a href="https://github.com/GuidoPreite/DRB" target="_blank" class="tool-link secondary">GitHub</a>
+						</div>
+					</div>
+
+					<div class="tool-card">
+						<div class="tool-icon">🌐</div>
+						<h3>Power Platform CLI</h3>
+						<p>Command-line interface for Power Platform development and ALM scenarios.</p>
+						<div class="tool-links">
+							<a href="https://docs.microsoft.com/en-us/power-platform/developer/cli/introduction" target="_blank" class="tool-link primary">Documentation</a>
+						</div>
+					</div>
+
+					<div class="tool-card">
+						<div class="tool-icon">🔧</div>
+						<h3>FetchXML Builder</h3>
+						<p>Visual query builder for FetchXML with advanced filtering and sorting options.</p>
+						<div class="tool-links">
+							<a href="https://github.com/rappen/FetchXMLBuilder" target="_blank" class="tool-link primary">GitHub</a>
+							<a href="https://www.xrmtoolbox.com/plugins/Cinteros.Xrm.FetchXmlBuilder/" target="_blank" class="tool-link secondary">XRM Tool</a>
+						</div>
+					</div>
+
+					<div class="tool-card">
+						<div class="tool-icon">📊</div>
+						<h3>Power BI Report Server</h3>
+						<p>On-premises reporting solution for Power BI reports and traditional SQL Server reports.</p>
+						<div class="tool-links">
+							<a href="https://powerbi.microsoft.com/en-us/report-server/" target="_blank" class="tool-link primary">Learn More</a>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Certification Resources -->
+			<section class="certifications-section">
+				<h2 class="section-title">Certification Learning Paths</h2>
+				<div class="cert-grid">
+					
+					<div class="cert-card">
+						<div class="cert-badge">PL-900</div>
+						<h3>Power Platform Fundamentals</h3>
+						<p>Build foundational knowledge of Power Platform core components and business value.</p>
+						<div class="cert-details">
+							<span class="cert-level">Fundamentals</span>
+							<span class="cert-duration">2-3 days</span>
+						</div>
+						<div class="cert-links">
+							<a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/?practice-assessment-type=certification" target="_blank" class="cert-link primary">Certification Details</a>
+							<a href="https://docs.microsoft.com/en-us/learn/paths/power-plat-fundamentals/" target="_blank" class="cert-link secondary">Learning Path</a>
+						</div>
+					</div>
+
+					<div class="cert-card">
+						<div class="cert-badge">PL-200</div>
+						<h3>Power Platform Functional Consultant</h3>
+						<p>Design, create, and implement solutions using Power Platform technologies.</p>
+						<div class="cert-details">
+							<span class="cert-level">Associate</span>
+							<span class="cert-duration">5-7 days</span>
+						</div>
+						<div class="cert-links">
+							<a href="https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-200/" target="_blank" class="cert-link primary">Exam Details</a>
+							<a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/?practice-assessment-type=certification" target="_blank" class="cert-link secondary">Certification Page</a>
+						</div>
+					</div>
+
+					<div class="cert-card">
+						<div class="cert-badge">PL-400</div>
+						<h3>Power Platform Developer</h3>
+						<p>Design, develop, secure, and extend Power Platform solutions.</p>
+						<div class="cert-details">
+							<span class="cert-level">Associate</span>
+							<span class="cert-duration">7-10 days</span>
+						</div>
+						<div class="cert-links">
+							<a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-developer-associate/?practice-assessment-type=certification" target="_blank" class="cert-link primary">Certification Page</a>
+							<a href="https://docs.microsoft.com/en-us/learn/paths/power-platform-developer/" target="_blank" class="cert-link secondary">Learning Path</a>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Documentation & APIs -->
+			<section class="documentation-section">
+				<h2 class="section-title">Documentation & APIs</h2>
+				<div class="docs-grid">
+					
+					<div class="doc-category">
+						<h3>📚 Official Documentation</h3>
+						<ul class="doc-links">
+							<li><a href="https://docs.microsoft.com/en-us/power-platform/" target="_blank">Power Platform Documentation</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/dynamics365/" target="_blank">Dynamics 365 Documentation</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/power-apps/developer/" target="_blank">Power Apps Developer Guide</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/power-automate/developer/" target="_blank">Power Automate Developer Resources</a></li>
+						</ul>
+					</div>
+
+					<div class="doc-category">
+						<h3>🔌 REST APIs & SDKs</h3>
+						<ul class="doc-links">
+							<li><a href="https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/" target="_blank">Dataverse Web API</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk" target="_blank">Dynamics 365 SDK for .NET</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/power-platform/admin/powershell-getting-started" target="_blank">Power Platform PowerShell</a></li>
+							<li><a href="https://docs.microsoft.com/en-us/connectors/" target="_blank">Connector Reference</a></li>
+						</ul>
+					</div>
+
+					<div class="doc-category">
+						<h3>🧪 Sample Code & Labs</h3>
+						<ul class="doc-links">
+							<li><a href="https://github.com/microsoft/PowerPlatform-Samples" target="_blank">Power Platform Samples</a></li>
+							<li><a href="https://github.com/Microsoft/PowerApps-Samples" target="_blank">Power Apps Samples</a></li>
+							<li><a href="https://powerapps.microsoft.com/en-us/blog/category/community/" target="_blank">Community Blog</a></li>
+							<li><a href="https://powerusers.microsoft.com/" target="_blank">Power Users Community</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Weekly News Section -->
+			<section class="news-section">
+				<h2 class="section-title">Latest Power Platform Updates</h2>
+				<div class="news-container">
+					<div class="news-intro">
+						<p>Stay updated with the latest announcements, feature releases, and community highlights from the Power Platform ecosystem.</p>
+					</div>
+					
+					<!-- News will be populated via JavaScript from RSS feeds -->
+					<div id="news-feed" class="news-feed">
+						<div class="news-loading">
+							<div class="loading-spinner"></div>
+							<p>Loading latest updates...</p>
+						</div>
+					</div>
+					
+					<div class="news-sources">
+						<h4>News Sources:</h4>
+						<div class="source-tags">
+							<span class="source-tag">Microsoft Power Platform Blog</span>
+							<span class="source-tag">Dynamics 365 Blog</span>
+							<span class="source-tag">Power Apps Blog</span>
+							<span class="source-tag">Power Automate Blog</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</main>
+	<Footer />
+
+	<!-- News Feed Script -->
+	<script>
+		// RSS feeds for Power Platform news
+		const RSS_FEEDS = [
+			{
+				name: 'Power Platform Blog',
+				url: 'https://powerapps.microsoft.com/en-us/blog/feed/',
+				category: 'Power Platform'
+			},
+			{
+				name: 'Dynamics 365 Blog', 
+				url: 'https://cloudblogs.microsoft.com/dynamics365/feed/',
+				category: 'Dynamics 365'
+			},
+			{
+				name: 'Power Apps Blog',
+				url: 'https://powerapps.microsoft.com/en-us/blog/category/power-apps/feed/',
+				category: 'Power Apps'
+			}
+		];
+
+		// Function to fetch and display news
+		async function loadNews() {
+			const newsContainer = document.getElementById('news-feed');
+			
+			try {
+				// For now, show static content - we'll implement RSS parsing later
+				const staticNews = [
+					{
+						title: "Power Platform and Dynamics 365 updates for November 2025",
+						summary: "New AI capabilities, enhanced security features, and improved developer tools now available.",
+						date: "November 13, 2025",
+						source: "Power Platform Blog",
+						link: "https://powerapps.microsoft.com/en-us/blog/"
+					},
+					{
+						title: "Dataverse for Teams general availability update",
+						summary: "Enhanced collaboration features and new integration options for Microsoft Teams environments.",
+						date: "November 10, 2025", 
+						source: "Dynamics 365 Blog",
+						link: "https://cloudblogs.microsoft.com/dynamics365/"
+					},
+					{
+						title: "Power Automate process mining capabilities expand",
+						summary: "New process discovery and optimization features help organizations identify automation opportunities.",
+						date: "November 8, 2025",
+						source: "Power Automate Blog", 
+						link: "https://flow.microsoft.com/en-us/blog/"
+					}
+				];
+
+				let newsHTML = '';
+				staticNews.forEach(item => {
+					newsHTML += `
+						<article class="news-item">
+							<div class="news-header">
+								<h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+								<div class="news-meta">
+									<span class="news-date">${item.date}</span>
+									<span class="news-source">${item.source}</span>
+								</div>
+							</div>
+							<p class="news-summary">${item.summary}</p>
+							<a href="${item.link}" target="_blank" class="read-more">Read Full Article →</a>
+						</article>
+					`;
+				});
+
+				newsContainer.innerHTML = newsHTML;
+
+			} catch (error) {
+				newsContainer.innerHTML = `
+					<div class="news-error">
+						<p>Unable to load latest updates. Please visit the official Microsoft blogs directly.</p>
+						<div class="direct-links">
+							<a href="https://powerapps.microsoft.com/en-us/blog/" target="_blank">Power Platform Blog</a>
+							<a href="https://cloudblogs.microsoft.com/dynamics365/" target="_blank">Dynamics 365 Blog</a>
+						</div>
+					</div>
+				`;
+			}
+		}
+
+		// Load news when page loads
+		document.addEventListener('DOMContentLoaded', loadNews);
+	</script>
+
+	<style>
+		/* Base Styles */
+		.resources-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem 1rem;
+			font-family: system-ui, -apple-system, sans-serif;
+		}
+
+		/* Hero Section */
+		.resources-hero {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 4rem 2rem;
+			border-radius: 12px;
+			text-align: center;
+			margin-bottom: 3rem;
+			box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+		}
+
+		.resources-hero h1 {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			font-weight: 700;
+			color: white;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.hero-subtitle {
+			font-size: 1.2rem;
+			max-width: 800px;
+			margin: 0 auto 2rem;
+			line-height: 1.6;
+			color: rgba(255, 255, 255, 0.95);
+		}
+
+		/* Disclaimer Notice */
+		.disclaimer-notice {
+			background: rgba(255, 255, 255, 0.15);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			border-radius: 8px;
+			padding: 1.5rem;
+			max-width: 900px;
+			margin: 0 auto;
+			backdrop-filter: blur(10px);
+		}
+
+		.disclaimer-notice p {
+			margin: 0;
+			font-size: 0.95rem;
+			line-height: 1.5;
+			color: rgba(255, 255, 255, 0.95);
+		}
+
+		.disclaimer-notice strong {
+			color: #ffd700;
+		}
+
+		/* Section Titles */
+		.section-title {
+			font-size: 2rem;
+			color: #1a365d;
+			margin-bottom: 2rem;
+			text-align: center;
+			font-weight: 600;
+		}
+
+		/* Tools Section */
+		.quick-tools-section {
+			margin-bottom: 4rem;
+		}
+
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			gap: 2rem;
+		}
+
+		.tool-card {
+			background: white;
+			border: 1px solid #e2e8f0;
+			border-radius: 12px;
+			padding: 2rem;
+			transition: all 0.3s ease;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+
+		.tool-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+			border-color: #667eea;
+		}
+
+		.tool-card.featured {
+			border: 2px solid #667eea;
+			background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);
+		}
+
+		.tool-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.tool-card h3 {
+			color: #1a365d;
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+			font-weight: 600;
+		}
+
+		.tool-card p {
+			color: #4a5568;
+			line-height: 1.6;
+			margin-bottom: 1.5rem;
+		}
+
+		.tool-links {
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.tool-link {
+			padding: 0.5rem 1rem;
+			border-radius: 6px;
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.9rem;
+			transition: all 0.2s ease;
+		}
+
+		.tool-link.primary {
+			background: #667eea;
+			color: white;
+		}
+
+		.tool-link.primary:hover {
+			background: #5a67d8;
+			transform: translateY(-1px);
+		}
+
+		.tool-link.secondary {
+			background: #f7fafc;
+			color: #4a5568;
+			border: 1px solid #e2e8f0;
+		}
+
+		.tool-link.secondary:hover {
+			background: #edf2f7;
+			border-color: #cbd5e0;
+		}
+
+		/* Certifications Section */
+		.certifications-section {
+			margin-bottom: 4rem;
+			background: #f8fafc;
+			padding: 3rem 2rem;
+			border-radius: 12px;
+		}
+
+		.cert-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.cert-card {
+			background: white;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease;
+		}
+
+		.cert-card:hover {
+			transform: translateY(-2px);
+		}
+
+		.cert-badge {
+			background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+			color: white;
+			padding: 0.5rem 1rem;
+			border-radius: 20px;
+			font-weight: bold;
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+
+		.cert-card h3 {
+			color: #1a365d;
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			font-weight: 600;
+		}
+
+		.cert-card p {
+			color: #4a5568;
+			line-height: 1.6;
+			margin-bottom: 1.5rem;
+		}
+
+		.cert-details {
+			display: flex;
+			gap: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.cert-level, .cert-duration {
+			background: #e2e8f0;
+			color: #2d3748;
+			padding: 0.25rem 0.75rem;
+			border-radius: 12px;
+			font-size: 0.8rem;
+			font-weight: 500;
+		}
+
+		.cert-links {
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.cert-link {
+			padding: 0.5rem 1rem;
+			border-radius: 6px;
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.9rem;
+			transition: all 0.2s ease;
+		}
+
+		.cert-link.primary {
+			background: #ff6b6b;
+			color: white;
+		}
+
+		.cert-link.primary:hover {
+			background: #ff5252;
+		}
+
+		.cert-link.secondary {
+			background: #f7fafc;
+			color: #4a5568;
+			border: 1px solid #e2e8f0;
+		}
+
+		.cert-link.secondary:hover {
+			background: #edf2f7;
+		}
+
+		/* Documentation Section */
+		.documentation-section {
+			margin-bottom: 4rem;
+		}
+
+		.docs-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.doc-category {
+			background: white;
+			border: 1px solid #e2e8f0;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+
+		.doc-category h3 {
+			color: #1a365d;
+			font-size: 1.2rem;
+			margin-bottom: 1.5rem;
+			font-weight: 600;
+		}
+
+		.doc-links {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.doc-links li {
+			margin-bottom: 0.75rem;
+		}
+
+		.doc-links a {
+			color: #667eea;
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.2s ease;
+		}
+
+		.doc-links a:hover {
+			color: #5a67d8;
+			text-decoration: underline;
+		}
+
+		/* News Section */
+		.news-section {
+			background: #1a365d;
+			color: white;
+			padding: 3rem 2rem;
+			border-radius: 12px;
+			margin-bottom: 2rem;
+		}
+
+		.news-section .section-title {
+			color: white;
+		}
+
+		.news-intro {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.news-intro p {
+			font-size: 1.1rem;
+			opacity: 0.9;
+		}
+
+		.news-feed {
+			margin-bottom: 2rem;
+		}
+
+		.news-loading {
+			text-align: center;
+			padding: 2rem;
+		}
+
+		.loading-spinner {
+			width: 40px;
+			height: 40px;
+			border: 3px solid rgba(255,255,255,0.3);
+			border-top: 3px solid white;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+			margin: 0 auto 1rem;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		.news-item {
+			background: rgba(255,255,255,0.1);
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin-bottom: 1.5rem;
+			backdrop-filter: blur(10px);
+		}
+
+		.news-header h3 {
+			margin: 0 0 0.5rem 0;
+		}
+
+		.news-header h3 a {
+			color: white;
+			text-decoration: none;
+			font-size: 1.1rem;
+			font-weight: 600;
+		}
+
+		.news-header h3 a:hover {
+			text-decoration: underline;
+		}
+
+		.news-meta {
+			display: flex;
+			gap: 1rem;
+			margin-bottom: 1rem;
+			font-size: 0.9rem;
+			opacity: 0.8;
+		}
+
+		.news-summary {
+			line-height: 1.6;
+			margin-bottom: 1rem;
+			opacity: 0.9;
+		}
+
+		.read-more {
+			color: #ffa726;
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.9rem;
+		}
+
+		.read-more:hover {
+			text-decoration: underline;
+		}
+
+		.news-sources {
+			text-align: center;
+		}
+
+		.news-sources h4 {
+			margin-bottom: 1rem;
+			opacity: 0.8;
+		}
+
+		.source-tags {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.source-tag {
+			background: rgba(255,255,255,0.2);
+			padding: 0.5rem 1rem;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 500;
+		}
+
+		.news-error {
+			text-align: center;
+			padding: 2rem;
+		}
+
+		.direct-links {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-top: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.direct-links a {
+			color: #ffa726;
+			text-decoration: none;
+			font-weight: 500;
+		}
+
+		.direct-links a:hover {
+			text-decoration: underline;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.resources-hero h1 {
+				font-size: 2rem;
+			}
+			
+			.tools-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.cert-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.docs-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.source-tags {
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	</style>
+</body>
+</html>

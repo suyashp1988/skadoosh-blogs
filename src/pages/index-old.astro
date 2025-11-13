@@ -1,0 +1,463 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { 
+	SITE_TITLE, 
+	SITE_DESCRIPTION, 
+	COMPANY_NAME, 
+	COMPANY_TAGLINE, 
+	COMPANY_DESCRIPTION,
+	SERVICES,
+	TARGET_INDUSTRIES 
+} from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			/* Reset and base styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #1a365d;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 2rem 1rem;
+			}
+
+			.homepage-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 2rem 1rem;
+				font-family: system-ui, -apple-system, sans-serif;
+			}
+
+			/* Hero Section */
+			.hero-section {
+				text-align: center;
+				margin-bottom: 3rem;
+				padding: 4rem 2rem;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				border-radius: 12px;
+				box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+			}
+
+			.hero-section h1 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+				color: white;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+
+			.hero-subtitle {
+				font-size: 1.2rem;
+				opacity: 1;
+				font-weight: 400;
+				margin-top: 1rem;
+				color: rgba(255, 255, 255, 0.95);
+			}
+
+			.hero-description {
+				font-size: 1.1rem;
+				margin-bottom: 2.5rem;
+				max-width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+				color: rgba(255, 255, 255, 0.95);
+			}
+
+			/* CTA Buttons */
+			.cta-buttons {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.cta-primary, .cta-secondary {
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.cta-primary {
+				background: #ff6b6b;
+				color: white;
+				box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+			}
+
+			.cta-primary:hover {
+				background: #ff5252;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+			}
+
+			.cta-secondary {
+				background: rgba(255, 255, 255, 0.2);
+				color: white;
+				border: 2px solid white;
+			}
+
+			.cta-secondary:hover {
+				background: white;
+				color: #667eea;
+			}
+
+			/* Services Section */
+			.services-section {
+				background: #f8fafc;
+				padding: 3rem 2rem;
+				margin-bottom: 3rem;
+				border-radius: 12px;
+			}
+
+			.services-section h2, .careers-section h2, .industries-section h2 {
+				color: #1a365d;
+				font-size: 2rem;
+				margin-bottom: 2rem;
+				text-align: center;
+				font-weight: 600;
+			}
+
+			.section-subtitle {
+				text-align: center;
+				font-size: 1.2rem;
+				color: #64748b;
+				margin-bottom: 3rem;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.service-card {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.service-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+			}
+
+			.service-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.service-name {
+				font-size: 1.4rem;
+				font-weight: 600;
+				color: #1a365d;
+				margin-bottom: 1rem;
+			}
+
+			.service-description {
+				color: #64748b;
+				line-height: 1.6;
+			}
+
+			/* Careers Section */
+			.careers-section {
+				background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+				color: white;
+				padding: 4rem 2rem;
+				margin-bottom: 3rem;
+				border-radius: 12px;
+			}
+
+			.careers-section h2 {
+				color: white;
+				margin-bottom: 1rem;
+			}
+
+			.careers-section .section-subtitle {
+				color: #e2e8f0;
+				font-size: 1.2rem;
+				margin-bottom: 2rem;
+			}
+
+			.careers-content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+				align-items: center;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.careers-text .section-title {
+				color: white;
+				margin-bottom: 1rem;
+			}
+
+			.careers-text .section-subtitle {
+				color: #e2e8f0;
+				font-size: 1.2rem;
+				margin-bottom: 2rem;
+			}
+
+			.careers-benefits {
+				list-style: none;
+				padding: 0;
+				margin-bottom: 2rem;
+			}
+
+			.careers-benefits li {
+				padding: 0.5rem 0;
+				font-size: 1.1rem;
+				color: #e2e8f0;
+			}
+
+			.careers-actions {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+
+			.btn-primary, .btn-secondary {
+				padding: 0.75rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s ease;
+				display: inline-block;
+			}
+
+			.btn-primary {
+				background: #667eea;
+				color: white;
+			}
+
+			.btn-primary:hover {
+				background: #5a67d8;
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+			}
+
+			.btn-secondary {
+				background: transparent;
+				color: white;
+				border: 2px solid #667eea;
+			}
+
+			.btn-secondary:hover {
+				background: #667eea;
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+			}
+
+			.opportunity-card {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 12px;
+				padding: 2rem;
+				text-align: center;
+			}
+
+			.opportunity-card h3 {
+				color: white;
+				font-size: 1.3rem;
+				margin-bottom: 1.5rem;
+				font-weight: 600;
+			}
+
+			.job-highlights {
+				display: flex;
+				flex-direction: column;
+				gap: 0.75rem;
+			}
+
+			.highlight {
+				background: rgba(102, 126, 234, 0.3);
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				color: white;
+				font-size: 0.9rem;
+				font-weight: 500;
+			}
+
+			/* Industries Section */
+			.industries-section {
+				background: white;
+				padding: 3rem 2rem;
+				border-radius: 12px;
+			}
+
+			.industries-list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.industry-tag {
+				background: #e2e8f0;
+				color: #475569;
+				padding: 0.75rem 1.5rem;
+				border-radius: 25px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+			}
+
+			.industry-tag:hover {
+				background: #667eea;
+				color: white;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2.5rem;
+				}
+				
+				.hero .tagline {
+					font-size: 1.2rem;
+				}
+				
+				.hero .description {
+					font-size: 1rem;
+				}
+				
+				.cta-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.careers-content {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+
+				.careers-actions {
+					flex-direction: column;
+				}
+
+				.btn-primary, .btn-secondary {
+					text-align: center;
+				}
+				
+				.services-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="homepage-container">
+				<section class="hero-section">
+					<h1>{COMPANY_NAME}</h1>
+					<p class="hero-subtitle">{COMPANY_TAGLINE}</p>
+					<p class="hero-description">{COMPANY_DESCRIPTION}</p>
+					<div class="cta-buttons">
+						<a href="/contact" class="cta-primary">
+							Get Free Consultation 🚀
+						</a>
+						<a href="/about" class="cta-secondary">
+							Learn More About Us
+						</a>
+					</div>
+				</section>
+
+				<section class="services-section">
+					<h2>Our Services</h2>
+					<p class="section-subtitle">
+						Comprehensive Microsoft ecosystem solutions delivered by expert teams
+					</p>
+					<div class="services-grid">
+						{SERVICES.map((service) => (
+							<div class="service-card">
+								<div class="service-icon">{service.icon}</div>
+								<h3 class="service-name">{service.name}</h3>
+								<p class="service-description">{service.description}</p>
+							</div>
+						))}
+					</div>
+					<div style="text-align: center;">
+						<a href="/services" class="cta-primary">
+							Explore All Services
+						</a>
+					</div>
+				</section>
+
+				<section class="careers-section">
+					<h2>Join Our Growing Team</h2>
+					<p class="section-subtitle">
+						🚀 We're hiring! Join our ambitious Dutch-Indian tech consultancy as a certified Microsoft consultant.
+					</p>
+					<div class="careers-content">
+						<div class="careers-text">
+							<ul class="careers-benefits">
+								<li>💰 Competitive compensation package</li>
+								<li>✈️ Annual travel to Netherlands headquarters</li>
+								<li>🔥 Real projects from Day 1 - No trainee roles</li>
+								<li>🏠 Subsidized accommodation in Gorakhpur</li>
+							</ul>
+							<div class="careers-actions">
+								<a href="/careers" class="btn-primary">View Open Positions</a>
+								<a href="https://www.linkedin.com/jobs/view/4335840121/" class="btn-secondary" target="_blank">Apply Now</a>
+							</div>
+						</div>
+						<div class="careers-visual">
+							<div class="opportunity-card">
+								<h3>Microsoft Dynamics 365 & Power Platform Consultant</h3>
+								<div class="job-highlights">
+									<span class="highlight">📍 Gorakhpur, India</span>
+									<span class="highlight">👔 Full-time</span>
+									<span class="highlight">🎓 PL-900 + PL-200 Required</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="industries-section">
+					<h2>Industries We Serve</h2>
+					<p class="section-subtitle">
+						Specialized expertise for large-scale enterprises across key sectors
+					</p>
+					<div class="industries-list">
+						{TARGET_INDUSTRIES.map((industry) => (
+							<span class="industry-tag">{industry}</span>
+						))}
+					</div>
+				</section>
+				
+			</div>
+		</main>		<Footer />
+	</body>
+</html>

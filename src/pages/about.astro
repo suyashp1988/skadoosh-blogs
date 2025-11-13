@@ -21,7 +21,7 @@ import {
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				line-height: 1.6;
-				color: #2c3e50;
+				color: #1a365d;
 				margin: 0;
 				padding: 0;
 			}
@@ -34,23 +34,28 @@ import {
 
 			/* Hero Section */
 			.about-hero {
-				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				color: white;
-				padding: 4rem 1.5rem 3rem;
+				padding: 4rem 2rem;
 				text-align: center;
+				border-radius: 12px;
+				margin-bottom: 3rem;
+				box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
 			}
 
 			.about-hero h1 {
-				font-size: 3rem;
+				font-size: 2.5rem;
 				font-weight: 700;
 				margin-bottom: 1rem;
+				color: white;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 
 			.about-hero p {
-				font-size: 1.3rem;
+				font-size: 1.2rem;
 				max-width: 800px;
 				margin: 0 auto;
-				color: #ecf0f1;
+				color: rgba(255, 255, 255, 0.95);
 			}
 
 			/* Company Story */
@@ -69,7 +74,7 @@ import {
 
 			.story-content h2 {
 				font-size: 2.2rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1.5rem;
 			}
 
@@ -125,6 +130,10 @@ import {
 				height: 100%;
 				object-fit: cover;
 				object-position: center;
+				display: block;
+				will-change: transform;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
 			}
 
 			.founder-image-placeholder {
@@ -140,7 +149,7 @@ import {
 
 			.founder-content h2 {
 				font-size: 2.2rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1rem;
 			}
 
@@ -192,7 +201,7 @@ import {
 				font-size: 2.5rem;
 				font-weight: 700;
 				margin-bottom: 3rem;
-				color: #2c3e50;
+				color: #1a365d;
 			}
 
 			.approach-grid {
@@ -222,7 +231,7 @@ import {
 
 			.approach-card h3 {
 				font-size: 1.4rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 1rem;
 			}
 
@@ -278,7 +287,7 @@ import {
 
 			.location-card h3 {
 				font-size: 1.3rem;
-				color: #2c3e50;
+				color: #1a365d;
 				margin-bottom: 0.5rem;
 			}
 
@@ -380,7 +389,14 @@ import {
 			<div class="container">
 				<div class="founder-grid">
 					<div class="founder-image">
-						<img src="/suyash-pandey-photo.jpg" alt="Suyash Pandey - Founder & Lead Architect" />
+						<img 
+							src="/suyash-pandey-photo.jpg?v=1.0" 
+							alt="Suyash Pandey - Founder & Lead Architect" 
+							loading="eager"
+							decoding="sync"
+							width="400"
+							height="400"
+						/>
 					</div>
 					<div class="founder-content">
 						<h2>Suyash Pandey</h2>
