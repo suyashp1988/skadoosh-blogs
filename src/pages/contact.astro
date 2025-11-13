@@ -1,0 +1,665 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { 
+	SITE_TITLE, 
+	COMPANY_NAME,
+	CONTACT_EMAIL,
+	CONTACT_PHONE,
+	LINKEDIN_URL,
+	COMPANY_ADDRESS,
+	HEADQUARTERS,
+	DELIVERY_CENTER 
+} from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Contact Us - ${SITE_TITLE}`} description="Get in touch with Skadoosh B.V. for your Microsoft Dynamics 365 CE and Power Platform needs. Free consultation available." />
+		<style>
+			/* Base styles */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #2c3e50;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1.5rem;
+			}
+
+			/* Hero Section */
+			.contact-hero {
+				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				color: white;
+				padding: 4rem 1.5rem 3rem;
+				text-align: center;
+			}
+
+			.contact-hero h1 {
+				font-size: 3rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+			}
+
+			.contact-hero p {
+				font-size: 1.3rem;
+				max-width: 800px;
+				margin: 0 auto;
+				color: #ecf0f1;
+			}
+
+			/* Contact Section */
+			.contact-section {
+				padding: 5rem 1.5rem;
+				background: #f8fafc;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem;
+				align-items: start;
+			}
+
+			.contact-form {
+				background: white;
+				padding: 3rem;
+				border-radius: 15px;
+				box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+			}
+
+			.contact-form h2 {
+				font-size: 2rem;
+				color: #2c3e50;
+				margin-bottom: 1.5rem;
+			}
+
+			.form-group {
+				margin-bottom: 1.5rem;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 0.5rem;
+				font-weight: 600;
+				color: #2c3e50;
+			}
+
+			.form-group input,
+			.form-group select,
+			.form-group textarea {
+				width: 100%;
+				padding: 1rem;
+				border: 2px solid #e2e8f0;
+				border-radius: 8px;
+				font-size: 1rem;
+				transition: border-color 0.3s ease;
+				box-sizing: border-box;
+			}
+
+			.form-group input:focus,
+			.form-group select:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: #667eea;
+			}
+
+			.form-group textarea {
+				min-height: 120px;
+				resize: vertical;
+			}
+
+			.submit-btn {
+				width: 100%;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				border: none;
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				font-size: 1.1rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.submit-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+			}
+
+			.submit-btn:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+				transform: none;
+				box-shadow: none;
+			}
+
+			/* Contact Info */
+			.contact-info {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+			}
+
+			.contact-card {
+				background: white;
+				padding: 2.5rem;
+				border-radius: 15px;
+				box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+				text-align: center;
+			}
+
+			.contact-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.contact-card h3 {
+				font-size: 1.4rem;
+				color: #2c3e50;
+				margin-bottom: 1rem;
+			}
+
+			.contact-card p {
+				color: #64748b;
+				margin-bottom: 0.5rem;
+			}
+
+			.contact-card a {
+				color: #667eea;
+				text-decoration: none;
+				font-weight: 600;
+			}
+
+			.contact-card a:hover {
+				text-decoration: underline;
+			}
+
+			/* Office Locations */
+			.office-locations {
+				padding: 5rem 1.5rem;
+				background: white;
+			}
+
+			.section-title {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 3rem;
+				color: #2c3e50;
+			}
+
+			.offices-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 3rem;
+				margin-top: 3rem;
+			}
+
+			.office-card {
+				background: #f8fafc;
+				padding: 2.5rem;
+				border-radius: 15px;
+				text-align: center;
+			}
+
+			.office-card.coming-soon {
+				background: #f1f5f9;
+				opacity: 0.6;
+				position: relative;
+			}
+
+			.office-card.coming-soon::after {
+				content: "Coming Soon";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: rgba(100, 116, 139, 0.9);
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				font-weight: 600;
+				font-size: 0.9rem;
+			}
+
+			.office-card.coming-soon h3,
+			.office-card.coming-soon p,
+			.office-card.coming-soon .office-type {
+				color: #94a3b8;
+			}
+
+			.office-flag {
+				font-size: 4rem;
+				margin-bottom: 1rem;
+			}
+
+			.office-card h3 {
+				font-size: 1.4rem;
+				color: #2c3e50;
+				margin-bottom: 0.5rem;
+			}
+
+			.office-type {
+				color: #667eea;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			.office-card p {
+				color: #64748b;
+				line-height: 1.6;
+				margin-bottom: 0.5rem;
+			}
+
+			/* CTA Section */
+			.cta-section {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 4rem 1.5rem;
+				text-align: center;
+			}
+
+			.cta-section h2 {
+				font-size: 2.2rem;
+				margin-bottom: 1rem;
+			}
+
+			.cta-section p {
+				font-size: 1.2rem;
+				margin-bottom: 2rem;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.consultation-btn {
+				display: inline-block;
+				padding: 1.2rem 2.5rem;
+				background: #ff6b6b;
+				color: white;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: 600;
+				font-size: 1.2rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+			}
+
+			.consultation-btn:hover {
+				background: #ff5252;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+			}
+
+			/* Alternative contact methods */
+			.direct-contact {
+				background: #f8fafc;
+				border-radius: 12px;
+				padding: 2rem;
+				margin-top: 2rem;
+				border-top: 3px solid #667eea;
+			}
+
+			.direct-contact h3 {
+				text-align: center;
+				color: #2c3e50;
+				margin-bottom: 1.5rem;
+				font-size: 1.2rem;
+			}
+
+			.direct-links {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 1rem;
+			}
+
+			.direct-link {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 1.25rem;
+				background: white;
+				border-radius: 8px;
+				text-decoration: none;
+				color: #2c3e50;
+				border: 2px solid #e2e8f0;
+				transition: all 0.3s ease;
+			}
+
+			.direct-link:hover {
+				border-color: #667eea;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+			}
+
+			.direct-link span {
+				font-size: 1.5rem;
+			}
+
+			.direct-link-text {
+				flex: 1;
+			}
+
+			.direct-link-title {
+				font-weight: 600;
+				font-size: 0.95rem;
+				margin-bottom: 0.2rem;
+			}
+
+			.direct-link-subtitle {
+				font-size: 0.8rem;
+				color: #64748b;
+			}
+
+			/* Message styles */
+			.message {
+				padding: 1rem;
+				border-radius: 8px;
+				margin-bottom: 1rem;
+				display: none;
+			}
+
+			.success-message {
+				background: #d4edda;
+				border: 1px solid #c3e6cb;
+				color: #155724;
+			}
+
+			.error-message {
+				background: #f8d7da;
+				border: 1px solid #f5c6cb;
+				color: #721c24;
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.contact-hero h1 {
+					font-size: 2.5rem;
+				}
+				
+				.contact-grid {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+				
+				.contact-form {
+					padding: 2rem;
+				}
+
+				.direct-links {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		
+		<!-- Hero Section -->
+		<section class="contact-hero">
+			<div class="container">
+				<h1>Contact {COMPANY_NAME}</h1>
+				<p>Ready to transform your business with Microsoft solutions? Let's start the conversation.</p>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section class="contact-section">
+			<div class="container">
+				<div class="contact-grid">
+					<!-- Contact Form -->
+					<div class="contact-form">
+						<h2>Send Us a Message</h2>
+						<p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.95rem;">
+							Fill out the form below and we'll get back to you within 24 hours.
+						</p>
+						
+						<!-- Success/Error Messages -->
+						<div id="successMessage" class="message success-message">
+							✅ <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you within 24 hours.
+						</div>
+
+						<div id="errorMessage" class="message error-message">
+							❌ <strong>Oops!</strong> There was an error sending your message. Please try again or contact us directly.
+						</div>
+
+						<form id="contactForm">
+							<div class="form-group">
+								<label for="name">Full Name *</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email Address *</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form-group">
+								<label for="company">Company</label>
+								<input type="text" id="company" name="company">
+							</div>
+							<div class="form-group">
+								<label for="phone">Phone Number</label>
+								<input type="tel" id="phone" name="phone">
+							</div>
+							<div class="form-group">
+								<label for="service">Service Interest</label>
+								<select id="service" name="service">
+									<option value="">Select a service...</option>
+									<option value="Dynamics 365 CE">Dynamics 365 CE</option>
+									<option value="Power Platform Development">Power Platform Development</option>
+									<option value="AI & Automation">AI & Automation</option>
+									<option value="Contact Center Solutions">Contact Center Solutions</option>
+									<option value="Backlog & Incident Management">Backlog & Incident Management</option>
+									<option value="General Consultation">General Consultation</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="message">Message *</label>
+								<textarea id="message" name="message" placeholder="Tell us about your project requirements and how we can help..." required></textarea>
+							</div>
+							<button type="submit" class="submit-btn">Send Message</button>
+						</form>
+
+						<!-- Alternative Contact Methods -->
+						<div class="direct-contact">
+							<h3>Prefer direct contact?</h3>
+							<div class="direct-links">
+								<a href="mailto:suyash@ska-doosh.com" class="direct-link">
+									<span>📧</span>
+									<div class="direct-link-text">
+										<div class="direct-link-title">Email Direct</div>
+										<div class="direct-link-subtitle">suyash@ska-doosh.com</div>
+									</div>
+								</a>
+								<a href="tel:+31640669962" class="direct-link">
+									<span>📞</span>
+									<div class="direct-link-text">
+										<div class="direct-link-title">Call Direct</div>
+										<div class="direct-link-subtitle">+31 6 40669962</div>
+									</div>
+								</a>
+								<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="direct-link">
+									<span>💼</span>
+									<div class="direct-link-text">
+										<div class="direct-link-title">LinkedIn</div>
+										<div class="direct-link-subtitle">Professional Profile</div>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<script>
+							document.getElementById('contactForm').addEventListener('submit', function(e) {
+								e.preventDefault();
+								
+								const form = e.target;
+								const formData = new FormData(form);
+								const submitBtn = form.querySelector('.submit-btn');
+								const successMsg = document.getElementById('successMessage');
+								const errorMsg = document.getElementById('errorMessage');
+								
+								// Hide previous messages
+								successMsg.style.display = 'none';
+								errorMsg.style.display = 'none';
+								
+								// Update button state
+								const originalText = submitBtn.innerHTML;
+								submitBtn.innerHTML = 'Sending...';
+								submitBtn.disabled = true;
+								
+								// Get form data
+								const name = formData.get('name') || '';
+								const email = formData.get('email') || '';
+								const company = formData.get('company') || 'Not specified';
+								const phone = formData.get('phone') || 'Not provided';
+								const service = formData.get('service') || 'Not specified';
+								const message = formData.get('message') || '';
+								
+								// Create email content
+								const subject = `New Contact: ${name} - ${service}`;
+								const body = `Hello Suyash,
+
+New contact form submission from your website:
+
+Name: ${name}
+Email: ${email}
+Company: ${company}
+Phone: ${phone}
+Service Interest: ${service}
+
+Message:
+${message}
+
+Best regards,
+Website Contact Form`;
+
+								// Create mailto link
+								const mailtoLink = `mailto:suyash@ska-doosh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+								
+								// Simulate sending and open email client
+								setTimeout(() => {
+									try {
+										// Open email client
+										window.open(mailtoLink, '_blank');
+										
+										// Show success message
+										successMsg.style.display = 'block';
+										form.reset();
+										
+										// Scroll to success message
+										successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+										
+										// Hide success message after 8 seconds
+										setTimeout(() => {
+											successMsg.style.display = 'none';
+										}, 8000);
+										
+									} catch (error) {
+										console.error('Error:', error);
+										errorMsg.style.display = 'block';
+										errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+										
+										// Hide error message after 8 seconds
+										setTimeout(() => {
+											errorMsg.style.display = 'none';
+										}, 8000);
+									}
+									
+									// Reset button
+									submitBtn.innerHTML = originalText;
+									submitBtn.disabled = false;
+								}, 1000);
+							});
+						</script>
+					</div>
+
+					<!-- Contact Info -->
+					<div class="contact-info">
+						<div class="contact-card">
+							<div class="contact-icon">📧</div>
+							<h3>Email Us</h3>
+							<p>Ready to discuss your project?</p>
+							<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+						</div>
+
+						<div class="contact-card">
+							<div class="contact-icon">📞</div>
+							<h3>Call Us</h3>
+							<p>Direct line to our founder</p>
+							<a href={`tel:${CONTACT_PHONE}`}>{CONTACT_PHONE}</a>
+						</div>
+
+						<div class="contact-card">
+							<div class="contact-icon">📍</div>
+							<h3>Our Location</h3>
+							<p>{COMPANY_ADDRESS}</p>
+							<p style="color: #667eea; font-weight: 600;">The Netherlands</p>
+						</div>
+
+						<div class="contact-card">
+							<div class="contact-icon">⏰</div>
+							<h3>Response Time</h3>
+							<p>We respond within 24 hours</p>
+							<p style="color: #27ae60; font-weight: 600;">Usually same day!</p>
+						</div>
+
+						<div class="contact-card">
+							<div class="contact-icon">💼</div>
+							<h3>LinkedIn</h3>
+							<p>Connect professionally</p>
+							<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">View Profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Office Locations -->
+		<section class="office-locations">
+			<div class="container">
+				<h2 class="section-title">Our Global Presence</h2>
+				<div class="offices-grid">
+					<div class="office-card">
+						<div class="office-flag">🇳🇱</div>
+						<h3>{HEADQUARTERS}</h3>
+						<div class="office-type">Strategic Headquarters</div>
+						<p><strong>Focus:</strong> Strategic oversight, client relations</p>
+						<p><strong>Leadership:</strong> Founder-led quality assurance</p>
+						<p><strong>Services:</strong> Architecture, consulting, project management</p>
+					</div>
+					<div class="office-card coming-soon">
+						<div class="office-flag">🇮🇳</div>
+						<h3>{DELIVERY_CENTER}</h3>
+						<div class="office-type">Elite Talent Pool (Expanding)</div>
+						<p><strong>Focus:</strong> Technical implementation and development</p>
+						<p><strong>Specialization:</strong> Elite technical talent pool</p>
+						<p><strong>Services:</strong> Development, testing, support</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<section class="cta-section">
+			<div class="container">
+				<h2>Ready for a Free Consultation?</h2>
+				<p>
+					No sales pitch, no obligation. Just a genuine conversation about your Microsoft ecosystem challenges 
+					and how our unique approach can solve them.
+				</p>
+				<a href="mailto:suyash@ska-doosh.com?subject=Free%20Consultation%20Request" class="consultation-btn">
+					Book Your Free Consultation
+				</a>
+			</div>
+		</section>
+
+		<Footer />
+	</body>
+</html>

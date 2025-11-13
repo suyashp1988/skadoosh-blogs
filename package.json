@@ -1,6 +1,6 @@
 {
-  "name": "skadoosh-blogs",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
+  "name": "skadoosh-website",
+  "description": "Professional services website for Skadoosh B.V. - Dutch Strategy, Global Talent in Microsoft Dynamics 365 CE and Power Platform solutions.",
   "cloudflare": {
     "label": "Astro Framework Starter",
     "products": [

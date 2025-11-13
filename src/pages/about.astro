@@ -1,85 +1,468 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { 
+	SITE_TITLE, 
+	COMPANY_NAME, 
+	COMPANY_TAGLINE,
+	LINKEDIN_URL,
+	HEADQUARTERS,
+	DELIVERY_CENTER 
+} from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Learn more about Suyash Pandey, the independent consultant behind Skadoosh."
-	pubDate={new Date()}
-	heroImage=""
->
-	<style>
-		.about-section {
-			display: flex;
-			align-items: flex-start;
-			gap: 2rem;
-			margin-bottom: 2.5rem;
-			flex-wrap: wrap;
-		}
-		.profile-pic {
-			width: 150px;
-			height: 150px;
-			border-radius: 50%;
-			object-fit: cover;
-			flex-shrink: 0;
-			margin: 0 auto; /* Center on smaller screens when it wraps */
-		}
-		.about-text {
-			flex: 1;
-			min-width: 300px; /* Ensures text doesn't get too squished */
-		}
-		h2 {
-			margin-top: 0;
-		}
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About Us - ${SITE_TITLE}`} description="Learn about Skadoosh B.V., our unique approach to Microsoft Dynamics 365 CE and Power Platform solutions, and our founder Suyash Pandey." />
+		<style>
+			/* Base styles */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #2c3e50;
+				margin: 0;
+				padding: 0;
+			}
 
-		/* Responsive adjustments */
-        @media (max-width: 580px) {
-            .about-section {
-                flex-direction: column;
-                align-items: center;
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1.5rem;
+			}
+
+			/* Hero Section */
+			.about-hero {
+				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				color: white;
+				padding: 4rem 1.5rem 3rem;
 				text-align: center;
-            }
-        }
-	</style>
+			}
 
-	<div class="about-section">
-    <!-- 
-		<img
-			src="https://placehold.co/150x150/E2E8F0/4A5568?text=Your+Photo"
-			alt="A picture of Suyash Pandey"
-			class="profile-pic"
-		/>
-        -->
-		<div class="about-text">
-			<h2>Who Am I?</h2>
-			<p>
-				👋 Hi! I’m Suyash—an independent consultant living in the Lowlands for almost 10 years now. 🌍 Originally from India 🇮🇳, I’ve found my second home here in the Netherlands 🇳🇱, and I’m loving it!
-			</p>
-			<p>
-				🎬 Big fan of Kung Fu Panda here! 🐼 I couldn’t resist adopting the word "Ska-doosh" 💥—especially when Po flexes his pinkie to defeat Tai Lung. That moment? Legendary. 😎
-			</p>
-			<p>
-				If you’d like to know more about me, how about we chat over a ☕ coffee, either in person or virtually via Teams? 💻
-			</p>
-		</div>
-	</div>
+			.about-hero h1 {
+				font-size: 3rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+			}
 
-	<h2>Ska Doosh and Me?</h2>
-	<p>
-		With over a decade of experience in consultancy, I decided it was time to take the leap and start my own journey. Now, I’m here to help you achieve your goals and turn your vision into reality. Let’s make great things happen together!
-	</p>
+			.about-hero p {
+				font-size: 1.3rem;
+				max-width: 800px;
+				margin: 0 auto;
+				color: #ecf0f1;
+			}
 
-	<h2>What do I offer?</h2>
-	<p>
-		As a Solution Architect, my expertise lies in transforming business needs into powerful solutions. I specialize in:
-	</p>
-	<ul>
-		<li>Dynamics Digital Contact Center</li>
-		<li>Dynamics Field Service</li>
-		<li>Power Platform</li>
-	</ul>
-	<p>
-		Let’s collaborate to streamline your processes and elevate your business to the next level!
-	</p>
+			/* Company Story */
+			.company-story {
+				padding: 5rem 1.5rem;
+				background: #f8fafc;
+			}
 
-</Layout>
+			.story-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem;
+				align-items: center;
+				margin-bottom: 4rem;
+			}
+
+			.story-content h2 {
+				font-size: 2.2rem;
+				color: #2c3e50;
+				margin-bottom: 1.5rem;
+			}
+
+			.story-content p {
+				font-size: 1.1rem;
+				color: #64748b;
+				margin-bottom: 1.5rem;
+				line-height: 1.7;
+			}
+
+			.highlight-box {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2.5rem;
+				border-radius: 15px;
+				text-align: center;
+			}
+
+			.highlight-box h3 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.highlight-box p {
+				color: #e8f4fd;
+				margin: 0;
+			}
+
+			/* Founder Section */
+			.founder-section {
+				padding: 5rem 1.5rem;
+				background: white;
+			}
+
+			.founder-grid {
+				display: grid;
+				grid-template-columns: 300px 1fr;
+				gap: 3rem;
+				align-items: start;
+			}
+
+			.founder-image {
+				width: 100%;
+				height: 300px;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				border-radius: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 4rem;
+			}
+
+			.founder-content h2 {
+				font-size: 2.2rem;
+				color: #2c3e50;
+				margin-bottom: 1rem;
+			}
+
+			.founder-content h3 {
+				color: #667eea;
+				font-size: 1.3rem;
+				margin-bottom: 2rem;
+			}
+
+			.founder-content p {
+				color: #64748b;
+				margin-bottom: 1.5rem;
+				line-height: 1.7;
+			}
+
+			.founder-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.stat {
+				text-align: center;
+				padding: 1.5rem;
+				background: #f8fafc;
+				border-radius: 10px;
+			}
+
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: #667eea;
+			}
+
+			.stat-label {
+				color: #64748b;
+				font-weight: 500;
+			}
+
+			/* Our Approach */
+			.our-approach {
+				padding: 5rem 1.5rem;
+				background: #f8fafc;
+			}
+
+			.section-title {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 3rem;
+				color: #2c3e50;
+			}
+
+			.approach-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 3rem;
+			}
+
+			.approach-card {
+				background: white;
+				padding: 2.5rem;
+				border-radius: 15px;
+				box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+				text-align: center;
+				transition: transform 0.3s ease;
+			}
+
+			.approach-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.approach-icon {
+				font-size: 3rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.approach-card h3 {
+				font-size: 1.4rem;
+				color: #2c3e50;
+				margin-bottom: 1rem;
+			}
+
+			.approach-card p {
+				color: #64748b;
+				line-height: 1.6;
+			}
+
+			/* Global Presence */
+			.global-presence {
+				padding: 5rem 1.5rem;
+				background: white;
+			}
+
+			.locations-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 3rem;
+				margin-top: 3rem;
+			}
+
+			.location-card {
+				text-align: center;
+				padding: 2rem;
+				background: #f8fafc;
+				border-radius: 12px;
+			}
+
+			.location-card.coming-soon {
+				background: #f1f5f9;
+				opacity: 0.6;
+				position: relative;
+			}
+
+			.location-card.coming-soon::after {
+				content: "Coming Soon";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: rgba(100, 116, 139, 0.9);
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				font-weight: 600;
+				font-size: 0.9rem;
+			}
+
+			.location-flag {
+				font-size: 4rem;
+				margin-bottom: 1rem;
+			}
+
+			.location-card h3 {
+				font-size: 1.3rem;
+				color: #2c3e50;
+				margin-bottom: 0.5rem;
+			}
+
+			.location-card.coming-soon h3,
+			.location-card.coming-soon p,
+			.location-card.coming-soon .location-type {
+				color: #94a3b8;
+			}
+
+			.location-type {
+				color: #667eea;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			.location-card p {
+				color: #64748b;
+				line-height: 1.6;
+			}
+
+			/* CTA Section */
+			.cta-section {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 4rem 1.5rem;
+				text-align: center;
+			}
+
+			.cta-button {
+				display: inline-block;
+				margin-top: 2rem;
+				padding: 1rem 2rem;
+				background: #ff6b6b;
+				color: white;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+			}
+
+			.cta-button:hover {
+				background: #ff5252;
+				transform: translateY(-2px);
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.about-hero h1 {
+					font-size: 2.5rem;
+				}
+				
+				.story-grid,
+				.founder-grid {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+				
+				.founder-image {
+					height: 250px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		
+		<!-- Hero Section -->
+		<section class="about-hero">
+			<div class="container">
+				<h1>About {COMPANY_NAME}</h1>
+				<p>{COMPANY_TAGLINE} - Building the bridge between strategic excellence and technical expertise</p>
+			</div>
+		</section>
+
+		<!-- Company Story -->
+		<section class="company-story">
+			<div class="container">
+				<div class="story-grid">
+					<div class="story-content">
+						<h2>Our Mission</h2>
+						<p>
+							Skadoosh is a modern consultancy focused on the Microsoft Dynamics 365 CE and Power Platform ecosystem. We build and manage dedicated, high-performance technical teams that bridge the gap between Dutch strategic oversight and elite global talent.
+						</p>
+						<p>
+							Our mission is to move beyond traditional freelancing to become a long-term, scalable, and cost-effective partnership for our clients. We don't just deliver projects—we solve your resourcing problems and build lasting technical partnerships.
+						</p>
+					</div>
+					<div class="highlight-box">
+						<h3>Founded in 2022</h3>
+						<p>Built on 10+ years of senior Dynamics 365 architecture experience</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Founder Section -->
+		<section class="founder-section">
+			<div class="container">
+				<div class="founder-grid">
+					<div class="founder-image">
+						👨‍💼
+					</div>
+					<div class="founder-content">
+						<h2>Suyash Pandey</h2>
+						<h3>Founder & Lead Architect</h3>
+						<p>
+							With over 10 years of experience as a senior Dynamics 365 architect, Suyash brings deep technical expertise combined with strategic business understanding. As your direct point of contact, you're not just another account number—you have a dedicated partner invested in your success.
+						</p>
+						<p>
+							Living in the Netherlands for nearly a decade, Suyash understands both the local business culture and the global technology landscape, making him uniquely positioned to bridge Dutch strategic oversight with elite global talent.
+						</p>
+						<div class="founder-stats">
+							<div class="stat">
+								<div class="stat-number">10+</div>
+								<div class="stat-label">Years Experience</div>
+							</div>
+							<div class="stat">
+								<div class="stat-number">2022</div>
+								<div class="stat-label">Founded Skadoosh</div>
+							</div>
+							<div class="stat">
+								<div class="stat-number">🥋</div>
+								<div class="stat-label">Kung Fu Panda Fan</div>
+							</div>
+						</div>
+						<div style="margin-top: 2rem;">
+							<a href="{LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" 
+							   style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: #0066cc; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+								</svg>
+								Connect on LinkedIn
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Our Approach -->
+		<section class="our-approach">
+			<div class="container">
+				<h2 class="section-title">What Makes Us Different</h2>
+				<div class="approach-grid">
+					<div class="approach-card">
+						<div class="approach-icon">🌍</div>
+						<h3>Hybrid NL-India Model</h3>
+						<p>A-level Dutch strategic management combined with cost-effective, dedicated teams in our Indian delivery center.</p>
+					</div>
+					<div class="approach-card">
+						<div class="approach-icon">🎯</div>
+						<h3>The Talent Pipeline</h3>
+						<p>We solve your resourcing problems by building, training, and managing teams for you. Hire them directly, fee-free, after initial period.</p>
+					</div>
+					<div class="approach-card">
+						<div class="approach-icon">👨‍💼</div>
+						<h3>Founder-Led Quality</h3>
+						<p>Direct line to founder as your Lead Architect. Personal attention and accountability you won't find elsewhere.</p>
+					</div>
+					<div class="approach-card">
+						<div class="approach-icon">🚀</div>
+						<h3>AI-Native Focus</h3>
+						<p>We're not just support—we're your dedicated R&D partner focused on next-generation AI and automation tools.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Global Presence -->
+		<section class="global-presence">
+			<div class="container">
+				<h2 class="section-title">Our Global Presence</h2>
+				<div class="locations-grid">
+					<div class="location-card">
+						<div class="location-flag">🇳🇱</div>
+						<h3>{HEADQUARTERS}</h3>
+						<div class="location-type">Strategic Headquarters</div>
+						<p>Dutch business strategy, client relations, and architectural oversight. Direct access to local market expertise and regulatory knowledge.</p>
+					</div>
+					<div class="location-card coming-soon">
+						<div class="location-flag">🇮🇳</div>
+						<h3>{DELIVERY_CENTER}</h3>
+						<div class="location-type">Elite Global Talent Pool</div>
+						<p>Dedicated development teams with cost-effective execution without compromising on quality. Currently expanding our operations.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<section class="cta-section">
+			<div class="container">
+				<h2>Ready to Experience the Skadoosh Difference?</h2>
+				<p>Let's discuss how our unique approach can solve your Microsoft ecosystem challenges.</p>
+				<a href="/contact" class="cta-button">Start a Conversation</a>
+			</div>
+		</section>
+
+		<Footer />
+	</body>
+</html>

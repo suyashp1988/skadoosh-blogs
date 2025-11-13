@@ -1,0 +1,361 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SERVICES } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Services - ${SITE_TITLE}`} description="Comprehensive Microsoft Dynamics 365 CE and Power Platform services delivered by expert teams." />
+		<style>
+			/* Base styles */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #2c3e50;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1.5rem;
+			}
+
+			/* Hero Section */
+			.services-hero {
+				background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+				color: white;
+				padding: 4rem 1.5rem 3rem;
+				text-align: center;
+			}
+
+			.services-hero h1 {
+				font-size: 3rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+			}
+
+			.services-hero p {
+				font-size: 1.3rem;
+				max-width: 800px;
+				margin: 0 auto;
+				color: #ecf0f1;
+			}
+
+			/* Services Grid */
+			.services-section {
+				padding: 5rem 1.5rem;
+				background: #f8fafc;
+			}
+
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+				gap: 3rem;
+				margin-top: 3rem;
+			}
+
+			.service-card {
+				background: white;
+				padding: 3rem 2rem;
+				border-radius: 15px;
+				box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+				transition: all 0.3s ease;
+				border-top: 4px solid #3498db;
+			}
+
+			.service-card:nth-child(2) { border-top-color: #e74c3c; }
+			.service-card:nth-child(3) { border-top-color: #f39c12; }
+			.service-card:nth-child(4) { border-top-color: #27ae60; }
+			.service-card:nth-child(5) { border-top-color: #9b59b6; }
+
+			.service-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+			}
+
+			.service-icon {
+				font-size: 4rem;
+				margin-bottom: 1.5rem;
+				display: block;
+			}
+
+			.service-title {
+				font-size: 1.8rem;
+				font-weight: 700;
+				color: #2c3e50;
+				margin-bottom: 1rem;
+			}
+
+			.service-description {
+				font-size: 1.1rem;
+				color: #64748b;
+				margin-bottom: 2rem;
+				line-height: 1.7;
+			}
+
+			.service-details {
+				margin-top: 2rem;
+			}
+
+			.service-details h4 {
+				color: #2c3e50;
+				margin-bottom: 1rem;
+				font-size: 1.2rem;
+			}
+
+			.service-details ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.service-details li {
+				padding: 0.5rem 0;
+				color: #64748b;
+				position: relative;
+				padding-left: 1.5rem;
+			}
+
+			.service-details li::before {
+				content: "✓";
+				position: absolute;
+				left: 0;
+				color: #27ae60;
+				font-weight: bold;
+			}
+
+			/* Why Choose Us Section */
+			.why-choose {
+				padding: 5rem 1.5rem;
+				background: white;
+			}
+
+			.section-title {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 3rem;
+				color: #2c3e50;
+			}
+
+			.differentiators-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.differentiator {
+				text-align: center;
+				padding: 2rem;
+				background: #f8fafc;
+				border-radius: 12px;
+			}
+
+			.differentiator h3 {
+				color: #2c3e50;
+				margin-bottom: 1rem;
+				font-size: 1.4rem;
+			}
+
+			.differentiator p {
+				color: #64748b;
+				line-height: 1.6;
+			}
+
+			/* CTA Section */
+			.cta-section {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 4rem 1.5rem;
+				text-align: center;
+			}
+
+			.cta-button {
+				display: inline-block;
+				margin-top: 2rem;
+				padding: 1rem 2rem;
+				background: #ff6b6b;
+				color: white;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+			}
+
+			.cta-button:hover {
+				background: #ff5252;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.services-hero h1 {
+					font-size: 2rem;
+				}
+				
+				.services-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				.service-card {
+					padding: 2rem 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		
+		<!-- Hero Section -->
+		<section class="services-hero">
+			<div class="container">
+				<h1>Our Services</h1>
+				<p>
+					Comprehensive Microsoft ecosystem solutions designed to scale your business with dedicated, high-performance teams that combine Dutch strategic oversight with elite global talent.
+				</p>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
+		<section class="services-section">
+			<div class="container">
+				<div class="services-grid">
+					<div class="service-card">
+						<span class="service-icon">🏢</span>
+						<h3 class="service-title">Dynamics 365 CE</h3>
+						<p class="service-description">
+							Complete Customer Engagement solutions designed for large-scale businesses. We implement, customize, and optimize Dynamics 365 to drive customer success.
+						</p>
+						<div class="service-details">
+							<h4>What We Deliver:</h4>
+							<ul>
+								<li>Custom implementation & configuration</li>
+								<li>Sales automation & pipeline management</li>
+								<li>Customer service optimization</li>
+								<li>Marketing automation integration</li>
+								<li>Advanced analytics & reporting</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="service-card">
+						<span class="service-icon">⚡</span>
+						<h3 class="service-title">Power Platform Development</h3>
+						<p class="service-description">
+							Custom applications and automation solutions using Power Apps, Power Automate, and Power BI to transform your business processes.
+						</p>
+						<div class="service-details">
+							<h4>What We Deliver:</h4>
+							<ul>
+								<li>Custom Power Apps development</li>
+								<li>Workflow automation with Power Automate</li>
+								<li>Advanced Power BI dashboards</li>
+								<li>Integration with existing systems</li>
+								<li>Performance optimization</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="service-card">
+						<span class="service-icon">🤖</span>
+						<h3 class="service-title">AI & Automation</h3>
+						<p class="service-description">
+							Next-generation AI solutions with Copilot Studio for business transformation. We're not just support - we're your dedicated R&D partner.
+						</p>
+						<div class="service-details">
+							<h4>What We Deliver:</h4>
+							<ul>
+								<li>Custom Copilot Studio implementations</li>
+								<li>AI-powered business process automation</li>
+								<li>Intelligent document processing</li>
+								<li>Conversational AI interfaces</li>
+								<li>Predictive analytics solutions</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="service-card">
+						<span class="service-icon">📞</span>
+						<h3 class="service-title">Contact Center Solutions</h3>
+						<p class="service-description">
+							Modern customer service solutions with Dynamics Contact Center to deliver exceptional customer experiences at scale.
+						</p>
+						<div class="service-details">
+							<h4>What We Deliver:</h4>
+							<ul>
+								<li>Omnichannel contact center setup</li>
+								<li>Agent productivity tools</li>
+								<li>Customer journey optimization</li>
+								<li>Real-time analytics & insights</li>
+								<li>Integration with existing CRM</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="service-card">
+						<span class="service-icon">📋</span>
+						<h3 class="service-title">Backlog & Incident Management</h3>
+						<p class="service-description">
+							Efficient project and incident management services for continuous improvement and operational excellence.
+						</p>
+						<div class="service-details">
+							<h4>What We Deliver:</h4>
+							<ul>
+								<li>Structured backlog management</li>
+								<li>Incident response & resolution</li>
+								<li>Performance monitoring</li>
+								<li>Process optimization</li>
+								<li>24/7 support coverage</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Choose Us -->
+		<section class="why-choose">
+			<div class="container">
+				<h2 class="section-title">Why Choose Skadoosh?</h2>
+				<div class="differentiators-grid">
+					<div class="differentiator">
+						<h3>🌍 Hybrid NL-India Model</h3>
+						<p>A-level Dutch strategic management combined with cost-effective, dedicated teams in our Indian delivery center.</p>
+					</div>
+					<div class="differentiator">
+						<h3>🎯 The Talent Pipeline</h3>
+						<p>We solve your resourcing problems by building, training, and managing teams for you. Hire them directly, fee-free, after initial period.</p>
+					</div>
+					<div class="differentiator">
+						<h3>👨‍💼 Founder-Led Quality</h3>
+						<p>Direct line to founder Suyash Pandey as your Lead Architect. You're not just another account number.</p>
+					</div>
+					<div class="differentiator">
+						<h3>🚀 AI-Native Focus</h3>
+						<p>Dedicated R&D partner focused on next-generation tools like Copilot Studio and AI for real business value.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<section class="cta-section">
+			<div class="container">
+				<h2>Ready to Transform Your Business?</h2>
+				<p>Let's discuss how our dedicated teams can accelerate your Microsoft ecosystem projects.</p>
+				<a href="/contact" class="cta-button">Get Free Consultation</a>
+			</div>
+		</section>
+
+		<Footer />
+	</body>
+</html>
